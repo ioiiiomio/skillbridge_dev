@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Instagram, Send, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -11,6 +14,10 @@ import {
 } from "@/lib/constants";
 
 export function Footer() {
+  const pathname = usePathname();
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+
   return (
     <footer className="relative bg-footer text-white/70">
       <Container className="py-16 sm:py-20">
@@ -45,7 +52,7 @@ export function Footer() {
                 {group.links.map((link) => (
                   <li key={link.label}>
                     <a
-                      href={link.href}
+                      href={resolveHref(link.href)}
                       className="text-[15px] text-white/65 transition-colors hover:text-white"
                     >
                       {link.label}

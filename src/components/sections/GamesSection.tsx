@@ -2,8 +2,8 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MascotImage } from "@/components/ui/MascotImage";
-import { GameCard } from "./GameCard";
-import { GAMES } from "@/lib/content";
+import { CatalogueGameCard } from "@/components/games/CatalogueGameCard";
+import { GAME_CATALOGUE } from "@/data/games/catalogue";
 
 export function GamesSection() {
   return (
@@ -29,8 +29,8 @@ export function GamesSection() {
         </div>
 
         <div className="mt-11 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GAMES.map((game) => (
-            <GameCard key={game.title} game={game} />
+          {GAME_CATALOGUE.map((game) => (
+            <CatalogueGameCard key={game.route} game={game} />
           ))}
         </div>
       </Container>

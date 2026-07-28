@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,11 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState<"RU" | "KZ">("RU");
+  const pathname = usePathname();
+  // Hash links only resolve against the homepage's sections. From any other
+  // route (e.g. /games/career-profile), prefix with "/" so they navigate
+  // back to the homepage and then scroll to the right section.
+  const resolveHref = (href: string) => (pathname === "/" ? href : `/${href}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -41,7 +47,7 @@ export function Header() {
       )}
     >
       <Container className="flex h-[76px] items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5 shrink-0">
+        <a href={resolveHref("#top")} className="flex items-center gap-2.5 shrink-0">
           <Image
             src="/brand/logo-icon.png"
             alt=""
@@ -59,7 +65,7 @@ export function Header() {
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="rounded-full px-4 py-2 text-[15px] font-medium text-ink/80 transition-colors hover:bg-soft hover:text-primary"
             >
               {link.label}
@@ -91,7 +97,7 @@ export function Header() {
               KZ
             </span>
           </button>
-          <Button href="#hero-cta" size="md">
+          <Button href={resolveHref("#hero-cta")} size="md">
             Открыть платформу
           </Button>
         </div>
@@ -118,7 +124,7 @@ export function Header() {
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               onClick={() => setMenuOpen(false)}
               className="rounded-xl px-4 py-3.5 text-base font-medium text-ink hover:bg-soft"
             >
@@ -135,7 +141,7 @@ export function Header() {
               {lang === "RU" ? "Переключить на KZ" : "Switch to RU"}
             </button>
           </div>
-          <Button href="#hero-cta" size="lg" className="mt-3 w-full" onClick={() => setMenuOpen(false)}>
+          <Button href={resolveHref("#hero-cta")} size="lg" className="mt-3 w-full" onClick={() => setMenuOpen(false)}>
             Открыть платформу
           </Button>
         </Container>
