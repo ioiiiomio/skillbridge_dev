@@ -142,40 +142,33 @@ export interface VideoTestimonial {
 }
 
 export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
-  // {
-  //   studentName: "",
-  //   college: "",
-  //   speciality: "",
-  //   videoSrc: "/videos/1.mp4",
-  //   poster: "/videos/1.png",
-  // },
+  {
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/1.mov",
+    poster: "/videos/1.jpg",
+  },
   {
     studentName: "",
     college: "",
     speciality: "",
     videoSrc: "/videos/2.mp4",
-    poster: "/videos/2.png",
+    poster: "/videos/2.jpg",
   },
   {
     studentName: "",
     college: "",
     speciality: "",
     videoSrc: "/videos/3.mp4",
-    poster: "/videos/3.png",
+    poster: "/videos/3.jpg",
   },
   {
     studentName: "",
     college: "",
     speciality: "",
-    videoSrc: "/videos/4.mp4",
-    poster: "/videos/4.png",
-  },
-  {
-    studentName: "",
-    college: "",
-    speciality: "",
-    videoSrc: "/videos/5.mp4",
-    poster: "/videos/5.png",
+    videoSrc: "/videos/4.mov",
+    poster: "/videos/4.jpg",
   },
   // add the rest of your video reviews here, matching real filenames in public/videos
 ];
