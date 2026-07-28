@@ -133,34 +133,79 @@ export const GAMES: GameItem[] = [
 // NOTE: Real student video stories are not yet available.
 // These are clearly-labelled structural placeholders — replace with
 // verified pilot-program stories before launch. No quotes are invented.
-export const RESULT_STORIES: ResultStory[] = [
+export interface VideoTestimonial {
+  studentName: string;
+  college: string;
+  speciality: string;
+  videoSrc: string;   // path in /public/videos
+  poster: string;     // static frame shown before play, also in /public/videos (or /public/images)
+}
+
+export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
   {
-    studentName: "Видео скоро появится",
-    college: "Колледж-партнёр SkillBridge KZ",
-    speciality: "Специальность уточняется",
-    result: "Место для истории участника пилота",
-    isPlaceholder: true,
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/1.mp4",
+    poster: "/videos/1.png",
   },
   {
-    studentName: "Видео скоро появится",
-    college: "Колледж-партнёр SkillBridge KZ",
-    speciality: "Специальность уточняется",
-    result: "Место для истории участника пилота",
-    isPlaceholder: true,
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/2.mp4",
+    poster: "/videos/2.png",
   },
   {
-    studentName: "Видео скоро появится",
-    college: "Колледж-партнёр SkillBridge KZ",
-    speciality: "Специальность уточняется",
-    result: "Место для истории участника пилота",
-    isPlaceholder: true,
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/3.mp4",
+    poster: "/videos/3.png",
   },
   {
-    studentName: "Видео скоро появится",
-    college: "Колледж-партнёр SkillBridge KZ",
-    speciality: "Специальность уточняется",
-    result: "Место для истории участника пилота",
-    isPlaceholder: true,
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/4.mp4",
+    poster: "/videos/4.png",
+  },
+  {
+    studentName: "",
+    college: "",
+    speciality: "",
+    videoSrc: "/videos/5.mp4",
+    poster: "/videos/5.png",
+  },
+  // add the rest of your video reviews here, matching real filenames in public/videos
+];
+
+export interface TextTestimonial {
+  studentName: string;
+  college: string;
+  text: string;
+}
+
+export const TEXT_TESTIMONIALS: TextTestimonial[] = [
+  {
+    studentName: "",
+    college: "",
+    text: "До этого искала практику только через знакомых или Telegram-чаты, где было непонятно, настоящая ли вакансия. Здесь понравилось, что все работодатели проверенные. Подала заявку буквально за пару минут и сразу было видно статус. Намного спокойнее пользоваться такой платформой.",
+  },
+  {
+    studentName: "",
+    college: "",
+    text: "Обычно работодатели хотят опыт, которого у студентов еще нет. На SkillBridge увидела вакансии именно для студентов колледжей, поэтому не было ощущения, что отправляешь резюме впустую. Интерфейс очень простой, разобралась быстро.",
+  },
+  {
+    studentName: "",
+    college: "",
+    text: "Больше всего понравилось, что не нужно искать вакансии по разным сайтам. Все в одном месте, плюс сразу понятно, подходит ли вакансия под мою специальность. Надеюсь, платформу подключат и в других колледжах.",
+  },
+  {
+    studentName: "",
+    college: "",
+    text: "Больше всего понравилось, что платформа сама предлагает подходящие вакансии. Не нужно долго искать — AI сразу показывает предложения, которые подходят под мою специальность. Это сильно экономит время.",
   },
 ];
 

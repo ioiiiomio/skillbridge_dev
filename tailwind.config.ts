@@ -85,6 +85,10 @@ const config: Config = {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         float: "float 5s ease-in-out infinite",
@@ -93,6 +97,7 @@ const config: Config = {
         fadeUp: "fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards",
         pulseGlow: "pulseGlow 3s ease-in-out infinite",
         spinSlow: "spinSlow 30s linear infinite",
+        marquee: "marquee 40s linear infinite",
       },
     },
   },
