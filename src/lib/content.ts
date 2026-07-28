@@ -142,13 +142,13 @@ export interface VideoTestimonial {
 }
 
 export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
-  {
-    studentName: "",
-    college: "",
-    speciality: "",
-    videoSrc: "/videos/1.mp4",
-    poster: "/videos/1.png",
-  },
+  // {
+  //   studentName: "",
+  //   college: "",
+  //   speciality: "",
+  //   videoSrc: "/videos/1.mp4",
+  //   poster: "/videos/1.png",
+  // },
   {
     studentName: "",
     college: "",
